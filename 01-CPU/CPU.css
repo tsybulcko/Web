@@ -4,6 +4,10 @@ body
 	font-family:'Roboto';
 	font-size:20px;
 	padding:1% 5%;
+	background-image:url('img/pcb.jpg');
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 p
 {
@@ -42,5 +46,19 @@ a
 		 font-weight:800;
 		 background-color:black;
 		 color:white;
-
      }
+:target /*> span*/
+{
+   background-color:limegreen;
+
+}
+    :target + div
+	{
+		border-radius: 25px;
+		background-color:rgba(220, 220, 220, 5);
+		box-shadow: 0 0 25px 25px rgba(220, 220, 220, 0.7);
+    }
+div
+{
+	padding: 16px;
+}
