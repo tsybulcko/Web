@@ -4,11 +4,13 @@ body
 	font-family:'Roboto';
 	font-size:20px;
 	padding:1% 5%;
-	background-image:url('img/pcb.jpg');
+	background-image:linear-gradient(rgba(108, 146, 175, 1), rgba(110, 127, 128, 0.6)), url('img/pcb.jpg');
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-size:cover;
+	backdrop-filter:blur(2px);
 }
+
 p
 {
 	text-align:justify; 
@@ -60,5 +62,19 @@ a
     }
 div
 {
-	padding: 16px;
+	padding: 16px;  /* внутренний отступ*/
+}
+.cite {
+	/*border: solid 1px;*/
+	border-left: solid 5px blue;   /*граница и тип линии*/
+	margin: 50px 100px 200px 300px; /*внешний отступ*/
+	/*margin: all-sides;             /одним значением/
+	margin: top-bottom left-right;   /двумя значениями/
+	margin: top left-right bottom;   /тремя значениями/
+	margin: top right bottom left;   /четырьмя значениями*/
+	padding: 30px; /*внутренний отступ*/
+	/*padding: all-sides;             /одним значением/
+	padding: top-bottom left-right;   /двумя значениями/
+	padding: top left-right bottom;   /тремя значениями/
+	padding: top right bottom left;   /четырьмя значениями*/
 }
