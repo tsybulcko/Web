@@ -26,9 +26,24 @@ function setImage()
 function setBackgroundColor(event)
 {
     document.body.style.backgroundColor = event.target.value;
+    console.log(event.target.id);
    // document.body.style.backgroundColor = document.getElementById("background-color").value;
 }
 function setForegroundColor()
 {
     document.body.style.color = document.getElementById("foreground-color").value;
+}
+function setColor(event)
+{
+    /*------------------------------------------------------------------------------
+    == - сравнивает два значения;
+    === - сравнивает два значения и типы этих значений;
+    === - возвращает 'true' толбко в том лучае, если совпадают как значения, так и типы данных.
+    --------------------------------------------------------------------------------
+    */
+    if (event.target.id === "background-color")
+        document.body.backgroundColor = event.target.value;
+    else
+        document.body.color = event.target.color;
+    console.log(event.target.id);
 }
