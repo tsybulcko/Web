@@ -41,9 +41,16 @@ function setColor(event)
     === - возвращает 'true' толбко в том лучае, если совпадают как значения, так и типы данных.
     --------------------------------------------------------------------------------
     */
-    if (event.target.id === "background-color")
+    document.body.style[(event.target.id === "background-color" ? "backgroundColor" : "color")] = event.target.value;
+    /*(event.target.id === "background-color" ?
+        document.body.style.backgroundColor :
+        document.body.style.color) = event.target.value;
+    */
+   /*if (event.target.id === "background-color")
         document.body.backgroundColor = event.target.value;
     else
         document.body.color = event.target.color;
+        */
     console.log(event.target.id);
+    
 }
