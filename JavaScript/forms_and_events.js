@@ -17,9 +17,9 @@ function setImage()
 {
     let filename = document.getElementById("image-file");
     let reader = new FileReader();
-    reader.onload = function (e)
+    reader.onload = function (event)
     {
-        document.getElementById("image").src = e.target.result;
+        document.getElementById("image").src = event.target.result;
     }
     reader.readAsDataURL(filename.files[0]);
 }
@@ -53,4 +53,20 @@ function setColor(event)
         */
     console.log(event.target.id);
     
+}
+document.addEventListener("mousemove", traceMouse);
+function traceMouse(event)
+{
+    document.getElementById("mouse").innerHTML = `X = ${event.clientX}, Y = ${event.clientY}`;
+}
+
+document.getElementById("switch-background").addEventListener("click", switchBackground);
+function switchBackground(event)
+{
+    let skin = document.body.className;
+    let switchButton = document.getElementById("switch-background");
+    switchButton.src = skin === "dark" ? "moon.jpg" : "sun.png";
+    document.body.className = skin === "dark" ? "light" : "dark";
+    //document.getElementById("debug-background").innerHTML = switchButton.src;
+    document.getElementById("debug-background").innerHTML = document.body.className;
 }

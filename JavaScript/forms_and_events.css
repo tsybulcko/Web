@@ -1,4 +1,50 @@
-﻿.result
+﻿.header
+{
+	width:98%;
+	display:flex;
+	justify-content:space-between;
+}
+.header img
+{
+	width:24px;
+	height:24px;
+}
+.dark
+{
+	background-color:#323232;
+	color:#C8C8C8;
+}
+.light
+{
+	background-color:white;
+	color:black;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+
+#mouse
+{
+	width:200px;
+}
+
+input, div, button
+{
+	font-size:24px;
+	width:50%;
+}
+input
+{
+	text-align:right;
+}
+
+.task
+{
+	width:100%;
+	display:flex;
+	align-items:center;
+}
+
+.result
 {
 	max-width:50%;
 }
@@ -32,7 +78,7 @@ label
 	height:300px;*/
 }
 
-#image, .image-container 
+#image, .image-container
 {
 	width: 400px;
 	height: 300px;
