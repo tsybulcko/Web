@@ -33,6 +33,8 @@ function setForegroundColor()
 {
     document.body.style.color = document.getElementById("foreground-color").value;
 }
+let color = document.getElementById("foreground-color");
+color.addEventListener("input", setColor);
 function setColor(event)
 {
     /*------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ function setColor(event)
     === - возвращает 'true' толбко в том лучае, если совпадают как значения, так и типы данных.
     --------------------------------------------------------------------------------
     */
-    document.body.style[(event.target.id === "background-color" ? "backgroundColor" : "color")] = event.target.value;
+    document.body.style[(event.target.id === 'background-color' ? 'backgroundColor' : 'color')] = event.target.value;
     /*(event.target.id === "background-color" ?
         document.body.style.backgroundColor :
         document.body.style.color) = event.target.value;
@@ -57,12 +59,15 @@ function setColor(event)
 document.addEventListener("mousemove", traceMouse);
 function traceMouse(event)
 {
-    document.getElementById("mouse").innerHTML = `X = ${event.clientX}, Y = ${event.clientY}`;
+    document.getElementById("mouse").innerHTML =
+        `X = ${event.clientX}, Y = ${event.clientY}`;
 }
 
 document.getElementById("switch-background").addEventListener("click", switchBackground);
 function switchBackground(event)
 {
+    document.body.style.backgroundColor = '';
+    document.body.style.color = '';
     document.body.className = document.body.className === "dark" ? "light" : "dark";
     /*let skin = document.body.className;
     let switchButton = document.getElementById("switch-background");
@@ -82,3 +87,26 @@ function setDelay(e)
     console.log(document.body.style);
     console.log(document.getElementById('#switch-background').style);
 }
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+function addLeadingZero(number)
+{
+    return number < 10 ? "0" + `${number}` : `${number}`;
+}
+function tickTimer()
+{
+    let date = new Date();
+    document.getElementById("raw-date").innerHTML = date.toString();
+
+    document.getElementById("hours").innerHTML =   addLeadingZero(date.getHours());
+    document.getElementById("minutes").innerHTML = addLeadingZero(date.getMinutes());
+    document.getElementById("seconds").innerHTML = addLeadingZero(date.getSeconds());
+
+    document.getElementById("years").innerHTML =   addLeadingZero(date.getFullYear());
+    document.getElementById("months").innerHTML = addLeadingZero(date.getMonth()+1);
+    document.getElementById("days").innerHTML = addLeadingZero(date.getDate());
+
+    setTimeout(tickTimer, 100);
+}
+tickTimer();

@@ -112,3 +112,12 @@ label
 	justify-content:space-between;
 	margin:12px;
 }
+
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+#clock, #clock div
+{
+	width:98%;
+	font-size:48px;
+	text-align:center;
+}
