@@ -1,6 +1,6 @@
-﻿.body, #switch-background
+﻿body, #switch-background
 {
-	transition: color 3s, background-color 10s, background-image 10s;
+	transition: color 3s, background-color 3s, background-image 3s;
 }
 .header
 {
@@ -16,6 +16,7 @@
 	height: var(--bg-size);
 	padding:0 calc(var(--bg-size)/5);
 	background-size:var(--bg-size) var(--bg-size);
+	background-repeat:no-repeat;
 }
 .dark
 {
@@ -38,11 +39,16 @@
     }
 
 	/*//////////////////////////////////////////////////////////////////////////////////////*/
-
-	#mouse
-	{
-		width: 200px;
-	}
+#switch-background-container, switch-background-container > div
+{
+	display:flex;
+	padding:0 8px;
+}
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+#mouse
+{
+	width: 200px;
+}
 
 input, div, button
 {
